@@ -1,0 +1,26 @@
+_G.autoclick = true;
+_G.autorebirth = true;
+
+spawn(function()
+while wait() do
+    if _G.autoclick == true then
+local args = {
+    [1] = "Normal"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2488796210"):FireServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+while wait () do
+    if _G.autorebirth == true then
+        local args = {
+    [1] = 500
+}
+
+game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        end
+    end
+end)
