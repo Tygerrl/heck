@@ -1,3 +1,12 @@
 loadstring(game:HttpGet('link here')()
 or
 loadstring(game:HttpGet('link here')())
+or
+loadstring(game:HttpGet("ScriptHERE", true))()
+
+for gui to lua : 
+NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
+Scripthere
+end)
+
+
