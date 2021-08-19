@@ -1,1 +1,27 @@
+_G.HackingTermStart = false;
+_G.HackingTermRew = false;
 
+
+while wait() do
+spawn(function()
+    if _G.HackingTermStart == true then
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.HackingTermStart:FireServer(unpack(args))
+    end
+end)
+
+
+
+spawn(function()
+    if _G.HackingTermRew == true then
+local args = {
+    [1] = workspace.HackingTerminals.Hack1.HackColor.Wedge.Rewards
+}
+
+game:GetService("ReplicatedStorage").Events.TerminalReward:FireServer(unpack(args))
+        end
+    end)
+end
