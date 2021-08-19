@@ -1,0 +1,157 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local Label = Instance.new("TextLabel")
+local aclabel = Instance.new("TextLabel")
+local arlabel = Instance.new("TextLabel")
+local acOFF = Instance.new("TextButton")
+local acON = Instance.new("TextButton")
+local arON = Instance.new("TextButton")
+local arOFF = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+main.Position = UDim2.new(0.67811501, 0, 0.533742309, 0)
+main.Size = UDim2.new(0, 372, 0, 242)
+main.Active = true
+main.Draggable = true
+
+Label.Name = "Label"
+Label.Parent = ScreenGui
+Label.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Label.Position = UDim2.new(0.67811501, 0, 0.533742309, 0)
+Label.Size = UDim2.new(0, 372, 0, 38)
+Label.Font = Enum.Font.Sarpanch
+Label.Text = "Clicking Legends v1 | Made by Tyger"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextSize = 14.000
+Label.TextWrapped = true
+
+aclabel.Name = "aclabel"
+aclabel.Parent = ScreenGui
+aclabel.BackgroundColor3 = Color3.fromRGB(255, 240, 29)
+aclabel.Position = UDim2.new(0.702875435, 0, 0.601226985, 0)
+aclabel.Size = UDim2.new(0, 122, 0, 69)
+aclabel.Font = Enum.Font.SciFi
+aclabel.Text = "AutoClicker"
+aclabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+aclabel.TextSize = 14.000
+
+arlabel.Name = "arlabel"
+arlabel.Parent = ScreenGui
+arlabel.BackgroundColor3 = Color3.fromRGB(255, 240, 29)
+arlabel.Position = UDim2.new(0.703674078, 0, 0.714110434, 0)
+arlabel.Size = UDim2.new(0, 122, 0, 69)
+arlabel.Font = Enum.Font.SciFi
+arlabel.Text = "AutoRebirth"
+arlabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+arlabel.TextSize = 14.000
+
+acOFF.Name = "acOFF"
+acOFF.Parent = ScreenGui
+acOFF.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
+acOFF.Position = UDim2.new(0.894568622, 0, 0.622085869, 0)
+acOFF.Size = UDim2.new(0, 87, 0, 35)
+acOFF.Font = Enum.Font.SourceSans
+acOFF.Text = "Off"
+acOFF.TextColor3 = Color3.fromRGB(0, 0, 0)
+acOFF.TextSize = 14.000
+acOFF.MouseButton1Down:connect(function()
+	_G.autoclick = false;
+	
+	spawn(function()
+		while wait() do
+			if _G.autoclick == true then
+				local args = {
+					[1] = "Normal"
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2488796210"):FireServer(unpack(args))
+			end
+		end
+	end)
+end)
+
+acON.Name = "acON"
+acON.Parent = ScreenGui
+acON.BackgroundColor3 = Color3.fromRGB(11, 213, 8)
+acON.Position = UDim2.new(0.81070286, 0, 0.622085869, 0)
+acON.Size = UDim2.new(0, 87, 0, 35)
+acON.Font = Enum.Font.SourceSans
+acON.Text = "On"
+acON.TextColor3 = Color3.fromRGB(0, 0, 0)
+acON.TextSize = 14.000
+acON.MouseButton1Down:connect(function()
+	_G.autoclick = true;
+
+	spawn(function()
+		while wait() do
+			if _G.autoclick == true then
+				local args = {
+					[1] = "Normal"
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2488796210"):FireServer(unpack(args))
+			end
+		end
+	end)
+end)
+
+arON.Name = "arON"
+arON.Parent = ScreenGui
+arON.BackgroundColor3 = Color3.fromRGB(11, 213, 8)
+arON.Position = UDim2.new(0.81070286, 0, 0.734969318, 0)
+arON.Size = UDim2.new(0, 87, 0, 35)
+arON.Font = Enum.Font.SourceSans
+arON.Text = "On"
+arON.TextColor3 = Color3.fromRGB(0, 0, 0)
+arON.TextSize = 14.000
+arON.MouseButton1Down:connect(function()
+	_G.autorebirth = true;
+	
+	spawn(function()
+		while wait () do
+			if _G.autorebirth == true then
+				local args = {
+					[1] = 500
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+			end
+		end
+	end)
+end)
+
+arOFF.Name = "arOFF"
+arOFF.Parent = ScreenGui
+arOFF.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
+arOFF.Position = UDim2.new(0.894568622, 0, 0.734969318, 0)
+arOFF.Size = UDim2.new(0, 87, 0, 35)
+arOFF.Font = Enum.Font.SourceSans
+arOFF.Text = "Off"
+arOFF.TextColor3 = Color3.fromRGB(0, 0, 0)
+arOFF.TextSize = 14.000
+arOFF.MouseButton1Down:connect(function()
+	_G.autorebirth = false;
+	
+	spawn(function()
+		while wait () do
+			if _G.autorebirth == true then
+				local args = {
+					[1] = 500
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+			end
+		end
+	end)
+end)
