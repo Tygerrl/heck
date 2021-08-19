@@ -1,1 +1,3 @@
 loadstring(game:HttpGet('link here')()
+or
+loadstring(game:HttpGet('link here')())
