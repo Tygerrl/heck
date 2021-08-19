@@ -40,7 +40,7 @@ on.Text = "On"
 on.TextColor3 = Color3.fromRGB(0, 0, 0)
 on.TextSize = 14.000
 on.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/Tygerrl/heck/main/texting%20sim%20heck%20script%20i%20make')())
+	loadstring(game:HttpGet('//raw.githubusercontent.com/Tygerrl/heck/main/texting%20sim%20heck%20script%20i%20make')())
 end)
 
 off.Name = "off"
@@ -53,5 +53,5 @@ off.Text = "Off"
 off.TextColor3 = Color3.fromRGB(0, 0, 0)
 off.TextSize = 14.000
 off.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/Tygerrl/heck/main/texting%20sim%20turn%20off%20hecks')())
+	loadstring(game:HttpGet('//raw.githubusercontent.com/Tygerrl/heck/main/texting%20sim%20turn%20off%20hecks')())
 end)
