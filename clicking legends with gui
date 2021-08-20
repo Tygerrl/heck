@@ -5,12 +5,12 @@
 
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
-local Label = Instance.new("TextLabel")
+local madebytygerlabel = Instance.new("TextLabel")
+local acON = Instance.new("TextButton")
 local aclabel = Instance.new("TextLabel")
 local arlabel = Instance.new("TextLabel")
-local acOFF = Instance.new("TextButton")
-local acON = Instance.new("TextButton")
 local arON = Instance.new("TextButton")
+local acOFF = Instance.new("TextButton")
 local arOFF = Instance.new("TextButton")
 
 --Properties:
@@ -19,54 +19,32 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 main.Name = "main"
 main.Parent = ScreenGui
-main.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-main.Position = UDim2.new(0.67811501, 0, 0.533742309, 0)
-main.Size = UDim2.new(0, 372, 0, 242)
+main.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+main.Position = UDim2.new(0.586261988, 0, 0.584049106, 0)
+main.Size = UDim2.new(0, 444, 0, 280)
 main.Active = true
 main.Draggable = true
 
-Label.Name = "Label"
-Label.Parent = ScreenGui
-Label.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-Label.Position = UDim2.new(0.67811501, 0, 0.533742309, 0)
-Label.Size = UDim2.new(0, 372, 0, 38)
-Label.Font = Enum.Font.Sarpanch
-Label.Text = "Clicking Legends v1 | Made by Tyger"
-Label.TextColor3 = Color3.fromRGB(255, 255, 255)
-Label.TextSize = 14.000
-Label.TextWrapped = true
+madebytygerlabel.Name = "madebytygerlabel"
+madebytygerlabel.Parent = main
+madebytygerlabel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+madebytygerlabel.Size = UDim2.new(0, 444, 0, 42)
+madebytygerlabel.Font = Enum.Font.SciFi
+madebytygerlabel.Text = "Texting Simulator v1 | Made by Tyger"
+madebytygerlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+madebytygerlabel.TextSize = 14.000
 
-aclabel.Name = "aclabel"
-aclabel.Parent = ScreenGui
-aclabel.BackgroundColor3 = Color3.fromRGB(255, 240, 29)
-aclabel.Position = UDim2.new(0.702875435, 0, 0.601226985, 0)
-aclabel.Size = UDim2.new(0, 122, 0, 69)
-aclabel.Font = Enum.Font.SciFi
-aclabel.Text = "AutoClicker"
-aclabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-aclabel.TextSize = 14.000
-
-arlabel.Name = "arlabel"
-arlabel.Parent = ScreenGui
-arlabel.BackgroundColor3 = Color3.fromRGB(255, 240, 29)
-arlabel.Position = UDim2.new(0.703674078, 0, 0.714110434, 0)
-arlabel.Size = UDim2.new(0, 122, 0, 69)
-arlabel.Font = Enum.Font.SciFi
-arlabel.Text = "AutoRebirth"
-arlabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-arlabel.TextSize = 14.000
-
-acOFF.Name = "acOFF"
-acOFF.Parent = ScreenGui
-acOFF.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
-acOFF.Position = UDim2.new(0.894568622, 0, 0.622085869, 0)
-acOFF.Size = UDim2.new(0, 87, 0, 35)
-acOFF.Font = Enum.Font.SourceSans
-acOFF.Text = "Off"
-acOFF.TextColor3 = Color3.fromRGB(0, 0, 0)
-acOFF.TextSize = 14.000
-acOFF.MouseButton1Down:connect(function()
-	_G.autoclick = false;
+acON.Name = "acON"
+acON.Parent = main
+acON.BackgroundColor3 = Color3.fromRGB(18, 186, 15)
+acON.Position = UDim2.new(0.470720708, 0, 0.325000018, 0)
+acON.Size = UDim2.new(0, 103, 0, 35)
+acON.Font = Enum.Font.SciFi
+acON.Text = "On"
+acON.TextColor3 = Color3.fromRGB(0, 0, 0)
+acON.TextSize = 14.000
+acON.MouseButton1Down:connect(function()
+	_G.autoclick = true;
 	
 	spawn(function()
 		while wait() do
@@ -81,37 +59,32 @@ acOFF.MouseButton1Down:connect(function()
 	end)
 end)
 
-acON.Name = "acON"
-acON.Parent = ScreenGui
-acON.BackgroundColor3 = Color3.fromRGB(11, 213, 8)
-acON.Position = UDim2.new(0.81070286, 0, 0.622085869, 0)
-acON.Size = UDim2.new(0, 87, 0, 35)
-acON.Font = Enum.Font.SourceSans
-acON.Text = "On"
-acON.TextColor3 = Color3.fromRGB(0, 0, 0)
-acON.TextSize = 14.000
-acON.MouseButton1Down:connect(function()
-	_G.autoclick = true;
+aclabel.Name = "aclabel"
+aclabel.Parent = main
+aclabel.BackgroundColor3 = Color3.fromRGB(209, 209, 21)
+aclabel.Position = UDim2.new(0.0699709654, 0, 0.232887805, 0)
+aclabel.Size = UDim2.new(0, 150, 0, 85)
+aclabel.Font = Enum.Font.SciFi
+aclabel.Text = "AutoClicker"
+aclabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+aclabel.TextSize = 14.000
 
-	spawn(function()
-		while wait() do
-			if _G.autoclick == true then
-				local args = {
-					[1] = "Normal"
-				}
-
-				game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2488796210"):FireServer(unpack(args))
-			end
-		end
-	end)
-end)
+arlabel.Name = "arlabel"
+arlabel.Parent = main
+arlabel.BackgroundColor3 = Color3.fromRGB(209, 209, 21)
+arlabel.Position = UDim2.new(0.0682295561, 0, 0.59956181, 0)
+arlabel.Size = UDim2.new(0, 150, 0, 85)
+arlabel.Font = Enum.Font.SciFi
+arlabel.Text = "AutoRebirth"
+arlabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+arlabel.TextSize = 14.000
 
 arON.Name = "arON"
-arON.Parent = ScreenGui
-arON.BackgroundColor3 = Color3.fromRGB(11, 213, 8)
-arON.Position = UDim2.new(0.81070286, 0, 0.734969318, 0)
-arON.Size = UDim2.new(0, 87, 0, 35)
-arON.Font = Enum.Font.SourceSans
+arON.Parent = main
+arON.BackgroundColor3 = Color3.fromRGB(18, 186, 15)
+arON.Position = UDim2.new(0.470720708, 0, 0.685714304, 0)
+arON.Size = UDim2.new(0, 103, 0, 35)
+arON.Font = Enum.Font.SciFi
 arON.Text = "On"
 arON.TextColor3 = Color3.fromRGB(0, 0, 0)
 arON.TextSize = 14.000
@@ -131,18 +104,44 @@ arON.MouseButton1Down:connect(function()
 	end)
 end)
 
+acOFF.Name = "acOFF"
+acOFF.Parent = main
+acOFF.BackgroundColor3 = Color3.fromRGB(193, 0, 0)
+acOFF.Position = UDim2.new(0.740278661, 0, 0.324999988, 0)
+acOFF.Size = UDim2.new(0, 103, 0, 34)
+acOFF.Font = Enum.Font.SciFi
+acOFF.Text = "Off"
+acOFF.TextColor3 = Color3.fromRGB(0, 0, 0)
+acOFF.TextSize = 14.000
+acOFF.MouseButton1Down:connect(function()
+	_G.autoclick = false;
+
+	spawn(function()
+		while wait() do
+			if _G.autoclick == true then
+				local args = {
+					[1] = "Normal"
+				}
+
+				game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2488796210"):FireServer(unpack(args))
+			end
+		end
+	end)
+end)
+
+
 arOFF.Name = "arOFF"
-arOFF.Parent = ScreenGui
-arOFF.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
-arOFF.Position = UDim2.new(0.894568622, 0, 0.734969318, 0)
-arOFF.Size = UDim2.new(0, 87, 0, 35)
-arOFF.Font = Enum.Font.SourceSans
+arOFF.Parent = main
+arOFF.BackgroundColor3 = Color3.fromRGB(193, 0, 0)
+arOFF.Position = UDim2.new(0.740278661, 0, 0.685714245, 0)
+arOFF.Size = UDim2.new(0, 103, 0, 34)
+arOFF.Font = Enum.Font.SciFi
 arOFF.Text = "Off"
 arOFF.TextColor3 = Color3.fromRGB(0, 0, 0)
 arOFF.TextSize = 14.000
 arOFF.MouseButton1Down:connect(function()
 	_G.autorebirth = false;
-	
+
 	spawn(function()
 		while wait () do
 			if _G.autorebirth == true then
