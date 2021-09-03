@@ -1,0 +1,87 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Clicking Legends | Script Made By Tyger", "Sentinel")
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+-- AutoClicker
+MainSection:NewToggle("AutoClicker", "Clicks For You", function(state)
+    if state then
+        getgenv().autoclick = true;
+        spawn(function()
+            while wait() do
+                if getgenv().autoclick == true then
+                    local A_1 = "Normal"
+                    local Event = game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2799771392")
+                    Event:FireServer(A_1)
+                end
+            end
+        end)
+    else
+        getgenv().autoclick = false;
+        spawn(function()
+            while wait() do
+                if getgenv().autoclick == true then
+                    local A_1 = "Normal"
+                    local Event = game:GetService("ReplicatedStorage").Remotes.Taps:FindFirstChild("2799771392")
+                    Event:FireServer(A_1)
+                end
+            end
+        end)
+    end
+end)
+--AutoRebirth
+MainSection:NewToggle("AutoRebirth", "Rebirths for you", function(state)
+    if state then
+        getgenv().autorebirth = true;
+        spawn(function()
+            while wait() do
+                if getgenv().autorebirth == true then
+                        local A_1 = 150
+                local Event = game:GetService("ReplicatedStorage").Remotes.Rebirth
+                Event:FireServer(A_1)
+                end
+            end
+        end)
+    else
+        getgenv().autorebirth = false;
+    spawn(function()
+            while wait() do
+                if getgenv().autorebirth == true then
+                        local A_1 = 150
+                local Event = game:GetService("ReplicatedStorage").Remotes.Rebirth
+                Event:FireServer(A_1)
+                end
+            end
+        end)
+    end
+end)
+--Player eg. Speed and Jump
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+PlayerSection:NewSlider("Walkspeed", "Change your Speed", 500, 16, function(v) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+PlayerSection:NewSlider("JumpPower", "Change your JumpPower", 500, 50, function(v) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+--Teleports
+local Teleports = Window:NewTab("Teleports")
+local TeleportSection = Teleports:NewSection("Teleports")
+TeleportSection:NewButton("Starter", "Starter Island", function()
+    function teleportTO(placeCFrame)
+        local plyr = game.Players.LocalPlayer;
+        if plyr.Character then
+            plyr.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Teleports.Starter.CFrame)
+end)
+TeleportSection:NewButton("Desert", "Teleport to the Desert", function()
+        function teleportTO(placeCFrame)
+            local plyr = game.Players.LocalPlayer;
+            if plyr.Character then
+                plyr.Character.HumanoidRootPart.CFrame = placeCFrame;
+            end
+        end
+        teleportTO(game:GetService("Workspace").Teleports.Desert.CFrame)
+end)
